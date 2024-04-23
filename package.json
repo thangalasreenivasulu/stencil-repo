@@ -1,6 +1,6 @@
 {
   "name": "stencil-modal-main",
-  "version": "0.0.1",
+  "version": "1.1.4",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -13,9 +13,9 @@
       "import": "./dist/stencil-modal-main/stencil-modal-main.esm.js",
       "require": "./dist/stencil-modal-main/stencil-modal-main.cjs.js"
     },
-    "./my-component": {
-      "import": "./dist/components/my-component.js",
-      "types": "./dist/components/my-component.d.ts"
+    "./my-modal": {
+      "import": "./dist/components/my-modal.js",
+      "types": "./dist/components/my-modal.d.ts"
     },
     "./loader": {
       "import": "./loader/index.js",

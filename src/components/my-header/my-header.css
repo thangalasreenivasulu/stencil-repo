@@ -1,0 +1,17 @@
+/* my-header.css */
+.my-header {
+  display: flex; /* Use flexbox to align children */
+  align-items: center; /* Center children vertically */
+  justify-content: flex-start; /* Align children towards the start (left) */
+  gap: 10px; /* Space between the image and the header text */
+}
+
+.heading {
+  font-size: 20px;
+}
+
+img {
+  display: block; /* Remove extra space beneath the image */
+  max-height: 40px; /* Set a maximum height for the image */
+  width: auto; /* Maintain aspect ratio */
+}

@@ -6,56 +6,83 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface MyButton {
+        "buttonName": string;
+    }
+    interface MyHeader {
+        "headerTitle": string;
+        "imageUrl": string;
+    }
+    interface MyModal {
+        "closeByClickingOutside": boolean;
+        "showCloseBtn": boolean;
+    }
+    interface MyOptions {
+        "options": string;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLMyButtonElement extends Components.MyButton, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLMyButtonElement: {
+        prototype: HTMLMyButtonElement;
+        new (): HTMLMyButtonElement;
+    };
+    interface HTMLMyHeaderElement extends Components.MyHeader, HTMLStencilElement {
+    }
+    var HTMLMyHeaderElement: {
+        prototype: HTMLMyHeaderElement;
+        new (): HTMLMyHeaderElement;
+    };
+    interface HTMLMyModalElement extends Components.MyModal, HTMLStencilElement {
+    }
+    var HTMLMyModalElement: {
+        prototype: HTMLMyModalElement;
+        new (): HTMLMyModalElement;
+    };
+    interface HTMLMyOptionsElement extends Components.MyOptions, HTMLStencilElement {
+    }
+    var HTMLMyOptionsElement: {
+        prototype: HTMLMyOptionsElement;
+        new (): HTMLMyOptionsElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "my-button": HTMLMyButtonElement;
+        "my-header": HTMLMyHeaderElement;
+        "my-modal": HTMLMyModalElement;
+        "my-options": HTMLMyOptionsElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface MyButton {
+        "buttonName"?: string;
+    }
+    interface MyHeader {
+        "headerTitle"?: string;
+        "imageUrl"?: string;
+    }
+    interface MyModal {
+        "closeByClickingOutside"?: boolean;
+        "showCloseBtn"?: boolean;
+    }
+    interface MyOptions {
+        "options"?: string;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "my-button": MyButton;
+        "my-header": MyHeader;
+        "my-modal": MyModal;
+        "my-options": MyOptions;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "my-button": LocalJSX.MyButton & JSXBase.HTMLAttributes<HTMLMyButtonElement>;
+            "my-header": LocalJSX.MyHeader & JSXBase.HTMLAttributes<HTMLMyHeaderElement>;
+            "my-modal": LocalJSX.MyModal & JSXBase.HTMLAttributes<HTMLMyModalElement>;
+            "my-options": LocalJSX.MyOptions & JSXBase.HTMLAttributes<HTMLMyOptionsElement>;
         }
     }
 }

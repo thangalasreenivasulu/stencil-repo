@@ -1,0 +1,17 @@
+/* my-button.css */
+button {
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  padding: 13px 24px; /* Good padding around the text */
+  border: 2px solid black; /* Solid black border */
+  cursor: pointer; /* Cursor indicates the element is clickable */
+  font-size: 16px; /* Optional: Adjust font size as needed */
+  text-align: center; /* Center the text inside the button */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  outline: none; /* Remove focus outline for aesthetics */
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Light background on hover for user feedback */
+}
