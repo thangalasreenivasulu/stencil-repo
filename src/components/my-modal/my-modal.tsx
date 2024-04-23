@@ -1,4 +1,4 @@
-import { Component, Element, h, Prop } from '@stencil/core';
+import { Component, Element, h, Listen, Prop } from '@stencil/core';
 
 @Component({
   tag: 'my-modal',
@@ -13,18 +13,17 @@ export class MyModal {
   componentDidLoad() {
     const dialog: HTMLDialogElement = this.el.shadowRoot.querySelector('dialog');
     dialog.showModal();
+    dialog.addEventListener('click', (event: MouseEvent) => {
+      let rect = dialog.getBoundingClientRect();
+      console.log(event.clientX, event.clientY);
 
-    window.addEventListener('click', e => {
-      if (!this.el.contains(e.target as Node)) {
-        console.log('event listener', e.target);
-      } else {
-        console.log('not working out');
+      console.log(rect);
+
+      let isInDialog = rect.top <= event.clientY && event.clientY <= rect.top + rect.height && rect.left <= event.clientX && event.clientX <= rect.left + rect.width;
+      if (!isInDialog) {
+        this.closeModal();
       }
-
-      // this.closeModal();
     });
-    console.log(dialog);
-    console.log('this.element', this.el);
   }
 
   closeModal() {

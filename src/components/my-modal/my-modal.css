@@ -1,8 +1,8 @@
 /* my-modal.css */
 dialog {
   width: 100%;
-  max-width: 700px; /* Maximum width to handle smaller screens */
-  min-width: 300px; /* Minimum width to ensure content visibility */
+  max-width: 700px;
+  min-width: 300px; 
   border: none;
   border-radius: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
